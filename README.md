@@ -71,33 +71,6 @@ Frontend (Planned)
 * Chart.js / Recharts – Trust score visualization
 * REST APIs – Backend integration
 
- 📂 Project Structure
-
-trustcode-platform/
-│
-├── backend/
-│   ├── main.py                # FastAPI entry point
-│   ├── requirements.txt       # Backend dependencies
-│   ├── api/                   # API route definitions
-│   ├── services/              # Trust logic & AI analysis
-│   ├── models/                # Database models
-│   └── utils/                 # Helper utilities
-│
-├── frontend/
-│   ├── README.md              # Frontend documentation
-│   └── src/                   # UI source code (planned)
-│
-├── .github/
-│   └── workflows/
-│       └── ci.yml             # GitHub Actions CI pipeline
-│
-├── docs/
-│   ├── architecture.md        # System architecture
-│   └── trust-model.md         # Trust score methodology
-│
-├── README.md                  # Project documentation
-└── .gitkeep                   # Placeholder for empty dirs
-
 
 📊 Trust Score Model (Conceptual)
 
