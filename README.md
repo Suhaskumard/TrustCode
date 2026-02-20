@@ -93,29 +93,6 @@ Frontend
 - **Custom Trust Scoring Logic**
 
 
-## 📁 Project Structure
-trustcode-platform/
-│
-├── .github/
-│   └── workflows/
-│       └── ci.yml              # GitHub Actions CI pipeline
-│
-├── backend/
-│   ├── main.py                 # FastAPI entry point
-│   ├── trust_engine/           # Trust score calculation logic
-│   ├── ai_audit/               # LangChain-based code audit
-│   ├── models/                 # Database models
-│   └── requirements.txt        # Backend dependencies
-│
-├── frontend/
-│   └── README.md               # Frontend setup (UI planned)
-│
-├── docs/
-│   └── architecture.md         # System design & diagrams
-│
-├── README.md                   # Project documentation
-└── .gitkeep
-
  📈 Trust Score Model (Concept)
 
 The Trust Score is calculated using weighted factors such as:
