@@ -235,5 +235,5 @@ TrustCode Platform demonstrates:
 * Practical AI integration
 * Explainable AI concepts
 * Scalable backend design
-* Industry-grade DevOps workflo
+* Industry-grade DevOps workflow
 
