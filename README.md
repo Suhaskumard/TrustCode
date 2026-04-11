@@ -3,7 +3,7 @@ TrustCode Platform 🚀
 TrustCode Platform is an **AI-assisted trust-aware CI/CD system** that evaluates code changes, test outcomes, and developer behavior to quantify the *reliability* of commits before they reach production. The platform introduces a continuous verification mechanism called the **Trust Loop**, ensuring that only well-tested and low-risk code is merged into protected branches.
 
 🔍 How TrustCode Platform Works
-
+ 
 TrustCode operates as an automated pipeline integrated with GitHub and CI/CD workflows:
 
 1. Code Commit & Pull Request
