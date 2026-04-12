@@ -5,7 +5,6 @@
 ## 📌 Project Overview
 A production-ready web application that analyzes GitHub repositories using AI-powered analysis to generate **Trust Scores**, code quality insights, security risks, and comprehensive reports.
 
-**Live Demo**: [localhost:3000 after docker-compose up](#quick-start)
 
 ## 🎯 Features
 - 🔍 GitHub Repo Analysis via API
