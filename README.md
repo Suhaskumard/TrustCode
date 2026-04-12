@@ -1,140 +1,242 @@
-# TrustCode Platform – Autonomous AI Analyst
+# 🚀 TrustCode Platform – Autonomous AI Analyst
 
-[![Trust Score](https://img.shields.io/badge/Trust%20Score-Production%20Ready-28a745)](https://trustcode-platform.com)
+## 📌 Overview
 
-## 📌 Project Overview
-A production-ready web application that analyzes GitHub repositories using AI-powered analysis to generate **Trust Scores**, code quality insights, security risks, and comprehensive reports.
+**TrustCode Platform** is a full-stack AI-powered system that evaluates GitHub repositories and generates a **Trust Score (0–100)** based on code quality, security, and project reliability.
 
-**Live Demo**: [localhost:3000 after docker-compose up](#quick-start)
+It helps developers, recruiters, and organizations quickly assess whether a repository is **safe, maintainable, and production-ready**.
+
+## ✨ Key Highlights
+
+* 🔍 Automated GitHub repository analysis
+* 🤖 AI-driven code quality & security insights
+* 📊 Trust Score with detailed breakdown
+* ⚡ FastAPI backend with scalable architecture
+* 🎨 Modern React dashboard (Vite + Tailwind)
+* 🐳 Fully containerized with Docker Compose
+* 🔐 Secure configuration using environment variables
 
 ## 🎯 Features
-- 🔍 GitHub Repo Analysis via API
-- 🤖 AI-powered code quality & security scanning
-- 📊 Trust Score (0-100) with breakdown
-- 🎨 Responsive dashboard (React + Tailwind)
-- 🚀 FastAPI backend with modular services
-- 🐳 Docker Compose for easy deployment
-- 🔐 Secure (env vars, CORS, error handling)
+
+### 🔎 Repository Analysis
+
+* Fetch repository metadata via GitHub API
+* Analyze structure, files, and signals
+
+### 🤖 AI Code Intelligence
+
+* Code quality heuristics
+* Security issue detection
+* Extendable LLM integration (future-ready)
+
+### 📊 Trust Score Engine
+
+* Score range: **0–100**
+* Factors:
+
+  * Code quality
+  * Security risks
+  * Project structure
+  * Maintainability
+
+### 🖥️ Interactive Dashboard
+
+* Clean UI built with React + Tailwind
+* Displays:
+
+  * Trust Score
+  * Insights
+  * Risk indicators
 
 ## 🧩 Architecture
+
 ```
-trustcode-platform/                           # Root: Full-stack GitHub Trust Analyzer
-├── backend/                                 # 🐍 FastAPI Backend API (localhost:8000)
-│   ├── Dockerfile                           # Backend Docker build
-│   ├── requirements.txt                     # Python deps (fastapi, pydantic, httpx)
-│   ├── main.py                              # FastAPI app entrypoint (/health, /analyze-repo)
-│   ├── models/schemas.py                    # Pydantic models (RepoAnalysisResponse)
-│   ├── utils/github_api.py                  # GitHub API client (fetch repo tree/files)
-│   ├── services/ai_analyzer.py              # AI code scanning logic
-│   └── services/trust_engine.py             # Trust Score calculation (0-100)
-├── frontend/                                # ⚛️ React + Vite + Tailwind UI (localhost:3000)
-│   ├── Dockerfile                           # Frontend Docker build
-│   ├── package.json                         # NPM deps (react, vite, axios)
-│   ├── vite.config.js                       # Vite bundler config
-│   ├── tailwind.config.js                   # Tailwind CSS config
-│   ├── postcss.config.js                    # PostCSS config
-│   ├── index.html                           # HTML entrypoint
-│   └── src/
-│       ├── main.jsx                         # React root render
-│       ├── App.jsx                          # Main dashboard component
-│       ├── index.css                        # Global styles
-│       └── api.js                           # API client (calls backend)
-├── docker-compose.yml                       # 🐳 Orchestrates backend (8000) + frontend (3000) services
-├── README.md                                # 📖 This documentation
-├── TODO.md                                  # ✅ Implementation tasks complete
-└── TODO_ARCH.md                             # 📋 Architecture update tracking
+trustcode-platform/
+│
+├── backend/                     # FastAPI Backend (Port 8000)
+│   ├── main.py                  # API entrypoint
+│   ├── models/                  # Pydantic schemas
+│   ├── services/                # AI + Trust logic
+│   └── utils/                   # GitHub API client
+│
+├── frontend/                    # React App (Port 3000)
+│   ├── src/
+│   │   ├── App.jsx              # Main UI
+│   │   └── api.js               # API integration
+│
+├── docker-compose.yml           # Multi-container setup
+└── README.md
 ```
 
-### 🐳 Docker Services
-| Service | Port | Description |
-|---------|------|-------------|
-| backend | 8000 | FastAPI API (/docs, /analyze-repo) |
-| frontend | 3000 | React app (Vite dev server) |
+## 🔄 System Workflow
 
-### 🔄 Data Flow
 ```
-User (browser) → Frontend (React) → API Call → Backend (FastAPI)
-                ↓
-GitHub API (utils/github_api.py) → Repo Data → AI Analyzer + Trust Engine
-                ↓
-JSON Response → Frontend Dashboard (Trust Score gauge, insights)
+User Input (Repo URL)
+        ↓
+Frontend (React UI)
+        ↓
+API Request → FastAPI Backend
+        ↓
+GitHub API → Fetch Repo Data
+        ↓
+AI Analyzer + Trust Engine
+        ↓
+Trust Score + Insights (JSON)
+        ↓
+Frontend Dashboard Visualization
 ```
 
-## 🚀 Quick Start
+## 🐳 Docker Services
 
-1. **Clone & Setup**
+| Service  | Port | Description             |
+| -------- | ---- | ----------------------- |
+| backend  | 8000 | FastAPI API             |
+| frontend | 3000 | React (Vite dev server) |
+
+## 🚀 Getting Started
+
+### 1️⃣ Clone the Repository
+
 ```bash
-git clone <repo>
+git clone https://github.com/Suhaskumard/TrustCode.git
 cd trustcode-platform
+```
+
+### 2️⃣ Setup Environment Variables
+
+```bash
 cp backend/.env.example backend/.env
 cp frontend/.env.example frontend/.env
-# Add your GITHUB_TOKEN to backend/.env
 ```
 
-2. **Run with Docker**
+👉 Add your GitHub token:
+
+```
+GITHUB_TOKEN=your_token_here
+```
+
+### 3️⃣ Run with Docker
+
 ```bash
 docker-compose up --build
 ```
 
-3. **Access**
-- Frontend: http://localhost:3000
-- API Docs: http://localhost:8000/docs
-- Health: http://localhost:8000/health
+### 4️⃣ Access the Application
 
-## 📋 API Endpoints
-| Endpoint | Method | Description |
-|----------|--------|-------------|
-| `/health` | GET | Health check |
-| `/analyze-repo/{repo_url}` | POST | Analyze repo (body: empty JSON) |
+* 🌐 Frontend → [http://localhost:3000](http://localhost:3000)
+* 📘 API Docs → [http://localhost:8000/docs](http://localhost:8000/docs)
+* ❤️ Health Check → [http://localhost:8000/health](http://localhost:8000/health)
 
-**Example**:
+## 📡 API Reference
+
+### 🔹 Health Check
+
+```http
+GET /health
+```
+
+### 🔹 Analyze Repository
+
+```http
+POST /analyze-repo/{repo_url}
+```
+
+### Example:
+
 ```bash
 curl -X POST "http://localhost:8000/analyze-repo/https://github.com/fastapi/fastapi"
 ```
 
 ## 🛠️ Tech Stack
-- **Backend**: FastAPI, Pydantic, httpx
-- **Frontend**: React 18, Vite, Tailwind CSS
-- **DevOps**: Docker Compose
-- **AI**: Modular analyzer (LLM-ready)
 
-## 📸 Screenshots
-*(Placeholder - Add after running)*
-- Dashboard with Trust Score gauge
-- Repo metrics & AI insights
-- Responsive mobile view
+### Backend
 
-## 🔧 Development
+* FastAPI
+* Pydantic
+* httpx
 
-**Backend**:
+### Frontend
+
+* React 18
+* Vite
+* Tailwind CSS
+
+### DevOps
+
+* Docker
+* Docker Compose
+
+### AI Layer
+
+* Modular Analyzer (LLM-ready architecture)
+
+## 🔐 Security Practices
+
+* Environment-based configuration (`.env`)
+* API input validation using Pydantic
+* CORS handling
+* No hardcoded secrets
+
+## ⚙️ Development Setup
+
+### Backend
+
 ```bash
 cd backend
 pip install -r requirements.txt
 uvicorn main:app --reload
 ```
 
-**Frontend**:
+### Frontend
+
 ```bash
 cd frontend
 npm install
 npm run dev
 ```
 
-## 🌟 Future Improvements (see TODO.md)
-- Real LLM integration (OpenAI/Groq)
-- Rate limiting & caching
-- Repo file content analysis
-- Export reports (PDF)
+## 📈 Future Enhancements
+
+* 🔗 LLM Integration (OpenAI / Groq)
+* 📦 Repository deep file analysis
+* ⚡ Caching & rate limiting
+* 📄 Export reports (PDF / JSON)
+* 🔐 Authentication system
+* 📊 Historical analytics dashboard
 
 ## 🤝 Contributing
-1. Fork & PR
-2. Follow PEP8 / Prettier
-3. Update TODO.md
 
-## 📄 License
-MIT - Use freely!
+Contributions are welcome!
 
----
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Open a Pull Request
 
-**Built with ❤️ by BLACKBOXAI**
+## 🧠 Use Cases
+
+* 🧑‍💻 Developers → Evaluate dependencies
+* 🧑‍💼 Recruiters → Assess candidate projects
+* 🏢 Companies → Validate open-source usage
+* 🎓 Students → Improve code quality
+
+## 📜 License
+
+This project is licensed under the MIT License.
+
+## ❤️ Acknowledgements
+
+* GitHub API
+* Open-source ecosystem
+* AI research community
+
+## 👨‍💻 Author
+
+**Suhas Kumar**
+
+## 🌟 Final Note
+
+TrustCode is built with a vision to make **code trust measurable**.
+
+> “Not all repositories are equal — TrustCode helps you prove it.”
 
