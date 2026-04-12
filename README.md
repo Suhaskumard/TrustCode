@@ -73,11 +73,6 @@ cp frontend/.env.example frontend/.env
 docker-compose up --build
 ```
 
-3. **Access**
-- Frontend: http://localhost:3000
-- API Docs: http://localhost:8000/docs
-- Health: http://localhost:8000/health
-
 ## 📋 API Endpoints
 | Endpoint | Method | Description |
 |----------|--------|-------------|
@@ -117,7 +112,7 @@ npm install
 npm run dev
 ```
 
-## 🌟 Future Improvements (see TODO.md)
+## 🌟 Future Improvements 
 - Real LLM integration (OpenAI/Groq)
 - Rate limiting & caching
 - Repo file content analysis
@@ -126,7 +121,4 @@ npm run dev
 
 
 
----
-
-**Built with ❤️ by BLACKBOXAI**
 
