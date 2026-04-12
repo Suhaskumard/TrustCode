@@ -126,13 +126,8 @@ npm run dev
 - Repo file content analysis
 - Export reports (PDF)
 
-## 🤝 Contributing
-1. Fork & PR
-2. Follow PEP8 / Prettier
-3. Update TODO.md
 
-## 📄 License
-MIT - Use freely!
+
 
 ---
 
