@@ -1,7 +1,5 @@
 # TrustCode Platform – Autonomous AI Analyst
 
-[![Trust Score](https://img.shields.io/badge/Trust%20Score-Production%20Ready-28a745)](https://trustcode-platform.com)
-
 ## 📌 Project Overview
 A production-ready web application that analyzes GitHub repositories using AI-powered analysis to generate **Trust Scores**, code quality insights, security risks, and comprehensive reports.
 
