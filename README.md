@@ -4,7 +4,7 @@
 A production-ready web application that analyzes GitHub repositories using AI-powered analysis to generate **Trust Scores**, code quality insights, security risks, and comprehensive reports.
 
 
-## 🎯 Features
+## 🎯 Features 
 - 🔍 GitHub Repo Analysis via API
 - 🤖 AI-powered code quality & security scanning
 - 📊 Trust Score (0-100) with breakdown
