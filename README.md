@@ -9,7 +9,7 @@ A production-ready web application that analyzes GitHub repositories using AI-po
 - 🤖 AI-powered code quality & security scanning
 - 📊 Trust Score (0-100) with breakdown
 - 🎨 Responsive dashboard (React + Tailwind)
-- 🚀 FastAPI backend with modular services
+- 🚀 FastAPI backend with modular services 
 - 🐳 Docker Compose for easy deployment
 - 🔐 Secure (env vars, CORS, error handling)
 
